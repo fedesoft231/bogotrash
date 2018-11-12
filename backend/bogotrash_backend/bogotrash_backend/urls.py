@@ -15,7 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from bogotrash_app import views
+from django.conf.urls import url, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('principal/', views.principal),
+    path('', include(('bogotrash_app.urls','bogotrash'))),
+    path('api/', include('rest_auth.urls')),
 ]
