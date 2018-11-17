@@ -19,7 +19,7 @@ export class RegisterPage {
 
   nombre: String;
   apellido: String;
-  cedula: String;
+  cedula: Number;
   correo: String;
   username: String;
   password: String;

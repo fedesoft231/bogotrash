@@ -36,7 +36,7 @@ class UsuarioSerializer(serializers.ModelSerializer):
     nombre = serializers.CharField(required=False)
     apellido = serializers.CharField(required=False)
     correo = serializers.CharField(required=False)
-    cedula = serializers.DateField(required=False)
+    cedula = serializers.IntegerField(required=False)
     catalogo = serializers.CharField(required=False)
     #category_name = serializers.RelatedField(source='category', read_only=True)
     
