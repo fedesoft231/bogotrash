@@ -1,5 +1,5 @@
 <!--
-  Generated template for the RegisterPage page.
+  Generated template for the CrearalumnoPage page.
 
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
@@ -7,12 +7,50 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>register</ion-title>
+    <ion-title>Registro</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
+  <ion-list>
 
+    <ion-item>
+      <ion-label stacked>Nombres</ion-label>
+      <ion-input type="text" [(ngModel)]="nombre"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Apellidos</ion-label>
+      <ion-input type="text" [(ngModel)]="apellido"></ion-input>
+    </ion-item>
+
+    <ion-item>
+        <ion-label stacked>Correo</ion-label>
+        <ion-input type="text" [(ngModel)]="codigo"></ion-input>
+    </ion-item>
+
+    <ion-item>
+        <ion-label stacked>Fecha de nacimiento</ion-label>
+        <ion-input type="date" [(ngModel)]="fecha_nacimiento"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Perfil</ion-label>
+      <ion-input type="text" [(ngModel)]="perfil"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Usuario</ion-label>
+      <ion-input type="text" [(ngModel)]="username"></ion-input>
+    </ion-item>
+
+    <ion-item>
+        <ion-label stacked>Clave</ion-label>
+        <ion-input type="text" [(ngModel)]="password"></ion-input>
+    </ion-item>
+
+    <button ion-button clear (click)="registrarUsuario()">Registarme</button>
+  </ion-list>
 </ion-content>

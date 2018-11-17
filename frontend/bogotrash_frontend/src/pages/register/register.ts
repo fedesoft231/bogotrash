@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { RestProvider } from '../../providers/rest/rest';
+import { HomePage } from '../home/home';
 
 /**
  * Generated class for the RegisterPage page.
@@ -15,11 +17,43 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class RegisterPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  nombre: String;
+  apellido: String;
+  codigo: String;
+  fecha_nacimiento: Date;
+  perfil: String;
+  username: String;
+  password: String;
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, public restProvider: RestProvider) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad RegisterPage');
+    console.log('ionViewDidLoad RegistroPage');
+  }
+
+  registrarUsuario() {
+    var data = {
+      'nombre': this.nombre,
+      'apellido': this.apellido,
+      'codigo': this.codigo,
+      'fecha_nacimiento': this.fecha_nacimiento,
+      'perfil': this.perfil,
+      'username': this.username,
+      'password': this.password,
+    }
+
+    this.restProvider.registrarUsuario(data).then(Response => {
+      var data = { 'username': this.username, 'password': this.password };
+      this.restProvider.login(data).then((data: any) => {
+        window.localStorage['token'] = data.key;
+        this.navCtrl.push(HomePage);
+      }, (err) => {
+        console.log(err);
+      });
+    }, err => {
+      console.log(err)
+    });
   }
 
 }
