@@ -1,8 +1,8 @@
 <ion-menu [content]="mycontent">
   <ion-content>
     <ion-list>
-      <button ion-item (click)="openPage(homePage)">Perfil</button>
-      <button ion-item (click)="openPage(friendsPage)">Cerrar sesión</button>
+      <button ion-item (click)="openPage()">Perfil</button>
+      <button ion-item (click)="logOut()">Cerrar sesión</button>
     </ion-list>
   </ion-content>
 </ion-menu>
@@ -14,7 +14,7 @@
         <ion-icon name="menu"></ion-icon>
       </button>
     </ion-buttons>
-    <ion-title>Mi pagina</ion-title>
+    <ion-title>Mi pagina home</ion-title>
   </ion-toolbar>
 </ion-header>
 
