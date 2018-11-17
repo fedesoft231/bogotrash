@@ -19,9 +19,8 @@ export class RegisterPage {
 
   nombre: String;
   apellido: String;
-  codigo: String;
-  fecha_nacimiento: Date;
-  perfil: String;
+  cedula: String;
+  correo: String;
   username: String;
   password: String;
 
@@ -36,9 +35,8 @@ export class RegisterPage {
     var data = {
       'nombre': this.nombre,
       'apellido': this.apellido,
-      'codigo': this.codigo,
-      'fecha_nacimiento': this.fecha_nacimiento,
-      'perfil': this.perfil,
+      'cedula': this.cedula,
+      'correo': this.username,
       'username': this.username,
       'password': this.password,
     }
