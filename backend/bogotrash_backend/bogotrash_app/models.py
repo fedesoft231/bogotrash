@@ -1,13 +1,13 @@
 from django.db import models
 from django.contrib.auth.models import User
 
+class TipoDesecho(models.Model):
+    nombre = models.CharField(max_length = 100)
+
 class Centro(models.Model):
     nombre = models.CharField(max_length = 50)
     ubicacion = models.CharField(max_length = 100)
-
-class TipoDesecho(models.Model):
-    nombre = models.CharField(max_length = 100)
-    centro = models.ManyToManyField(Centro)
+    tipo_desecho = models.ManyToManyField(TipoDesecho)
 
 class Desecho(models.Model):
     nombre = models.CharField(max_length = 100)
@@ -30,6 +30,6 @@ class Usuario(models.Model):
 class Queja(models.Model):
     descripcion = models.CharField(max_length = 500)
     fecha_creacion = models.DateTimeField(auto_now_add=True)
-    foto = models.CharField(max_length = 100, blank=True, null=True)
+    foto = models.ImageField(max_length = 100, blank=True, null=True)
     ubicacion = models.CharField(max_length = 100)
     user = models.ForeignKey(Usuario, on_delete = models.CASCADE)
