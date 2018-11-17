@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'rest_framework.authtoken',
     'rest_auth',
     'corsheaders',    
+    'django_google_maps',
 ]
 
 MIDDLEWARE = [
@@ -155,3 +156,5 @@ CORS_ALLOW_METHODS = (
 
 MEDIA_ROOT = 'C:\\Users\\Estudiante\\Documents\\bogotrash\\backend\\bogotrash_backend\\media'
 MEDIA_URL = '/media/'
+
+GOOGLE_MAPS_API_KEY = 'AIzaSyDUAxHujvgWSpbBbJgq6Cmtk5qBzmHUydU'

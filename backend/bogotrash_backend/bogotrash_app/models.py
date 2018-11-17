@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django_google_maps import fields as map_fields
 
 class TipoDesecho(models.Model):
     nombre = models.CharField(max_length = 100)
@@ -31,5 +32,7 @@ class Queja(models.Model):
     descripcion = models.CharField(max_length = 500)
     fecha_creacion = models.DateTimeField(auto_now_add=True)
     foto = models.ImageField(upload_to='img/fotosapp/', blank=True, null=True)
+    dirección = map_fields.AddressField(max_length=200, verbose_name='Dirección', blank=True, null=True)
+    geolocacion = map_fields.GeoLocationField(max_length=100, verbose_name='Coordenadas', blank=True, null=True)
     ubicacion = models.CharField(max_length = 100)
     user = models.ForeignKey(Usuario, on_delete = models.CASCADE)

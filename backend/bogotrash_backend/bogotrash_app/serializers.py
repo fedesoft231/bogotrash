@@ -8,7 +8,7 @@ class QuejaSerializer(serializers.ModelSerializer):
     foto = Base64ImageField()
     class Meta:
        model = Queja
-       fields = ('descripcion', 'fecha_creacion', 'foto', 'ubicacion', 'user')
+       fields = ('descripcion', 'fecha_creacion', 'foto', 'ubicacion', 'geolocacion', 'user')
 
 class CatalogoSerializer(serializers.ModelSerializer):
     class Meta:
