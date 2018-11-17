@@ -30,6 +30,6 @@ class Usuario(models.Model):
 class Queja(models.Model):
     descripcion = models.CharField(max_length = 500)
     fecha_creacion = models.DateTimeField(auto_now_add=True)
-    foto = models.ImageField(max_length = 100, blank=True, null=True)
+    foto = models.ImageField(upload_to='img/fotosapp/', blank=True, null=True)
     ubicacion = models.CharField(max_length = 100)
     user = models.ForeignKey(Usuario, on_delete = models.CASCADE)

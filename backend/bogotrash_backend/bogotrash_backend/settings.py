@@ -152,3 +152,6 @@ CORS_ALLOW_METHODS = (
     'POST',
     'PUT',
 )
+
+MEDIA_ROOT = 'C:\\Users\\Estudiante\\Documents\\bogotrash\\backend\\bogotrash_backend\\media'
+MEDIA_URL = '/media/'

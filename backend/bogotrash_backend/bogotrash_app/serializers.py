@@ -1,29 +1,32 @@
 from rest_framework import serializers
 from bogotrash_app.models import Usuario, Queja, Catalogo, Centro, Desecho, TipoDesecho
 from django.contrib.auth.models import User
+from drf_extra_fields.fields import Base64ImageField
+
 
 class QuejaSerializer(serializers.ModelSerializer):
-   class Meta:
+    foto = Base64ImageField()
+    class Meta:
        model = Queja
        fields = ('descripcion', 'fecha_creacion', 'foto', 'ubicacion', 'user')
 
 class CatalogoSerializer(serializers.ModelSerializer):
-   class Meta:
+    class Meta:
        model = Catalogo
        fields = ('desecho', )
 
 class CentroSerializer(serializers.ModelSerializer):
-   class Meta:
+    class Meta:
        model = Centro
        fields = ('nombre', 'ubicacion')
 
 class DesechoSerializer(serializers.ModelSerializer):
-   class Meta:
+    class Meta:
        model = Desecho
        fields = ('nombre', 'tipo', 'info')
 
 class TipoDesechoSerializer(serializers.ModelSerializer):
-   class Meta:
+    class Meta:
        model = TipoDesecho
        fields = ('nombre', 'centro')
 
