@@ -1,7 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
 
-
 class Centro(models.Model):
     nombre = models.CharField(max_length = 50)
     ubicacion = models.CharField(max_length = 100)

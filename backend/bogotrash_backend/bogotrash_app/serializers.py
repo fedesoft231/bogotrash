@@ -33,13 +33,13 @@ class UsuarioSerializer(serializers.ModelSerializer):
     nombre = serializers.CharField(required=False)
     apellido = serializers.CharField(required=False)
     correo = serializers.CharField(required=False)
-    fecha_nacimiento = serializers.DateField(required=False)
-    perfil = serializers.CharField(required=False)
+    cedula = serializers.DateField(required=False)
+    catalogo = serializers.CharField(required=False)
     #category_name = serializers.RelatedField(source='category', read_only=True)
     
     class Meta:
         model = User
-        fields = ('id', 'username', 'password', 'nombre', 'apellido', 'correo', 'cedula')
+        fields = ('id', 'username', 'password', 'nombre', 'apellido', 'correo', 'cedula', 'catalogo')
 
     def create(self, validated_data, instance=None):
         user_data = validated_data.pop('user')
